@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 
 import TechnologyCard from "./TechnologyCard";
+import StackSidebar from "./StackSidebar";
 
 import type { Technology } from "../types/technology";
 
 function TechnologySection() {
   const [technologies, setTechnologies] =
+    useState<Technology[]>([]);
+
+  const [selectedStack, setSelectedStack] =
     useState<Technology[]>([]);
 
   const [loading, setLoading] =
@@ -14,6 +18,9 @@ function TechnologySection() {
   const [error, setError] =
     useState<string>("");
 
+  /*
+    Load technology data from JSON
+  */
   useEffect(() => {
     const loadTechnologies = async (): Promise<void> => {
       try {
@@ -46,6 +53,48 @@ function TechnologySection() {
     loadTechnologies();
   }, []);
 
+  /*
+    Add technology to stack
+  */
+  const handleAdd = (
+    technology: Technology
+  ): void => {
+    const alreadyExists =
+      selectedStack.some(
+        (item) => item.id === technology.id
+      );
+
+    if (alreadyExists) {
+      return;
+    }
+
+    setSelectedStack((previousStack) => [
+      ...previousStack,
+      technology,
+    ]);
+  };
+
+  /*
+    Remove one technology
+  */
+  const handleRemove = (
+    technologyId: number
+  ): void => {
+    setSelectedStack((previousStack) =>
+      previousStack.filter(
+        (technology) =>
+          technology.id !== technologyId
+      )
+    );
+  };
+
+  /*
+    Remove all technologies
+  */
+  const handleRemoveAll = (): void => {
+    setSelectedStack([]);
+  };
+
   return (
     <section
       id="technologies"
@@ -67,7 +116,7 @@ function TechnologySection() {
           </p>
         </div>
 
-        {/* Loading State */}
+        {/* Loading */}
         {loading && (
           <div className="flex min-h-[300px] items-center justify-center">
             <div className="text-center">
@@ -82,7 +131,7 @@ function TechnologySection() {
           </div>
         )}
 
-        {/* Error State */}
+        {/* Error */}
         {!loading && error && (
           <div className="rounded-lg border border-red-100 bg-red-50 p-5 text-center">
 
@@ -97,16 +146,38 @@ function TechnologySection() {
           </div>
         )}
 
-        {/* Technology Cards */}
+        {/* Main Technology Area */}
         {!loading && !error && (
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_280px]">
 
-            {technologies.map((technology) => (
-              <TechnologyCard
-                key={technology.id}
-                technology={technology}
-              />
-            ))}
+            {/* Technology Cards */}
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+
+              {technologies.map((technology) => {
+                const isAdded =
+                  selectedStack.some(
+                    (item) =>
+                      item.id === technology.id
+                  );
+
+                return (
+                  <TechnologyCard
+                    key={technology.id}
+                    technology={technology}
+                    onAdd={handleAdd}
+                    isAdded={isAdded}
+                  />
+                );
+              })}
+
+            </div>
+
+            {/* Your Stack */}
+            <StackSidebar
+              selectedStack={selectedStack}
+              onRemove={handleRemove}
+              onRemoveAll={handleRemoveAll}
+            />
 
           </div>
         )}
