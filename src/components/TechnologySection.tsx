@@ -181,7 +181,7 @@ function TechnologySection() {
 
         {/* Technology Area */}
         {!loading && !error && (
-          <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_280px]">
+          <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_280px]">
 
             {/* Technology Cards */}
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">

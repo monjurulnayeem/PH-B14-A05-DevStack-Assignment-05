@@ -13,12 +13,37 @@ function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-[1300px] items-center justify-between px-5 lg:px-0">
+      <div className="relative mx-auto flex h-14 max-w-[1300px] items-center justify-between px-5 lg:px-0">
 
-        {/* Logo */}
+        {/* Desktop Logo */}
         <a
           href="#home"
-          className="flex shrink-0 items-center"
+          className="hidden shrink-0 lg:flex"
+        >
+          <img
+            src="/images/logo.png"
+            alt="Dev Stack"
+            className="h-8 w-auto"
+          />
+        </a>
+
+        {/* Mobile Hamburger */}
+        <button
+          type="button"
+          onClick={() =>
+            setIsMenuOpen((previous) => !previous)
+          }
+          className="flex h-8 w-8 items-center justify-center rounded-md text-lg text-slate-700 lg:hidden"
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
+        >
+          {isMenuOpen ? "×" : "☰"}
+        </button>
+
+        {/* Mobile Center Logo */}
+        <a
+          href="#home"
+          className="absolute left-1/2 flex -translate-x-1/2 items-center lg:hidden"
         >
           <img
             src="/images/logo.png"
@@ -61,35 +86,21 @@ function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Navigation Controls */}
-        <div className="flex items-center gap-3 lg:hidden">
+        {/* Mobile Authentication */}
+        <div className="flex items-center gap-2 lg:hidden">
           <a
             href="#signin"
-            className="text-xs font-medium text-slate-600"
+            className="text-[11px] font-medium text-slate-600"
           >
             Sign In
           </a>
 
           <a
             href="#signup"
-            className="brand-gradient-bg rounded-full px-4 py-1.5 text-xs font-semibold text-white"
+            className="brand-gradient-bg rounded-full px-3.5 py-1.5 text-[11px] font-semibold text-white"
           >
             Sign Up
           </a>
-
-          <button
-            type="button"
-            onClick={() =>
-              setIsMenuOpen((previous) => !previous)
-            }
-            className="ml-1 flex h-8 w-8 items-center justify-center rounded-md text-slate-700"
-            aria-label="Toggle navigation menu"
-            aria-expanded={isMenuOpen}
-          >
-            <span className="text-xl">
-              {isMenuOpen ? "×" : "☰"}
-            </span>
-          </button>
         </div>
       </div>
 

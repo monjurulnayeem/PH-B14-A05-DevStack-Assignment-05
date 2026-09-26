@@ -14,7 +14,7 @@ function StackSidebar({
   onRemoveAll,
 }: StackSidebarProps) {
   return (
-    <aside className="h-fit rounded-xl border border-slate-100 bg-white p-4 shadow-[0_2px_12px_rgba(15,23,42,0.04)] lg:sticky lg:top-20">
+    <aside className="h-fit rounded-xl border border-slate-100 bg-white p-4 shadow-[0_2px_12px_rgba(15,23,42,0.04)] xl:sticky xl:top-20">
 
       {/* Sidebar Header */}
       <div>
