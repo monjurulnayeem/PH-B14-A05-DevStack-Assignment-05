@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 import TechnologyCard from "./TechnologyCard";
 import StackSidebar from "./StackSidebar";
@@ -45,6 +46,8 @@ function TechnologySection() {
             : "Something went wrong.";
 
         setError(message);
+
+        toast.error(message);
       } finally {
         setLoading(false);
       }
@@ -65,6 +68,10 @@ function TechnologySection() {
       );
 
     if (alreadyExists) {
+      toast.warning(
+        `${technology.name} is already in your stack.`
+      );
+
       return;
     }
 
@@ -72,6 +79,10 @@ function TechnologySection() {
       ...previousStack,
       technology,
     ]);
+
+    toast.success(
+      `${technology.name} added to your stack!`
+    );
   };
 
   /*
@@ -80,11 +91,25 @@ function TechnologySection() {
   const handleRemove = (
     technologyId: number
   ): void => {
+    const technologyToRemove =
+      selectedStack.find(
+        (technology) =>
+          technology.id === technologyId
+      );
+
+    if (!technologyToRemove) {
+      return;
+    }
+
     setSelectedStack((previousStack) =>
       previousStack.filter(
         (technology) =>
           technology.id !== technologyId
       )
+    );
+
+    toast.success(
+      `${technologyToRemove.name} removed from your stack.`
     );
   };
 
@@ -92,7 +117,15 @@ function TechnologySection() {
     Remove all technologies
   */
   const handleRemoveAll = (): void => {
+    if (selectedStack.length === 0) {
+      return;
+    }
+
     setSelectedStack([]);
+
+    toast.success(
+      "All technologies removed from your stack."
+    );
   };
 
   return (
@@ -116,7 +149,7 @@ function TechnologySection() {
           </p>
         </div>
 
-        {/* Loading */}
+        {/* Loading State */}
         {loading && (
           <div className="flex min-h-[300px] items-center justify-center">
             <div className="text-center">
@@ -131,7 +164,7 @@ function TechnologySection() {
           </div>
         )}
 
-        {/* Error */}
+        {/* Error State */}
         {!loading && error && (
           <div className="rounded-lg border border-red-100 bg-red-50 p-5 text-center">
 
@@ -146,7 +179,7 @@ function TechnologySection() {
           </div>
         )}
 
-        {/* Main Technology Area */}
+        {/* Technology Area */}
         {!loading && !error && (
           <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_280px]">
 
