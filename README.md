@@ -6,11 +6,11 @@ Users can browse technology cards, view technology information, add technologies
 
 ## Live Demo
 
-Netlify live URL:
+Netlify live URL: dashing-tapioca-81d026.netlify.app
 
 ## GitHub Repository
 
-GitHub repository URL:
+GitHub repository URL: https://github.com/monjurulnayeem/PH-B14-A05-DevStack-Assignment-05
 
 ---
 
