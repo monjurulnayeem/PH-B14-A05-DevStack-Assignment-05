@@ -4,7 +4,7 @@
     "name": "React",
     "category": "Frontend",
     "description": "A declarative, component-based JavaScript library for building modern user interfaces.",
-    "icon": "/public/images/React.png",
+    "icon": "/images/React.png",
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Popular"
@@ -14,7 +14,7 @@
     "name": "Vue.js",
     "category": "Frontend",
     "description": "An approachable, performant, and versatile framework for building web user interfaces.",
-    "icon": "/public/images/Vue.js.png",
+    "icon": "/images/Vue.js.png",
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
     "badge": "Versatile"
@@ -24,7 +24,7 @@
     "name": "Svelte",
     "category": "Frontend",
     "description": "A modern framework that compiles components into efficient JavaScript with minimal runtime overhead.",
-    "icon": "/public/images/Svelte.png",
+    "icon": "/images/Svelte.png",
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Fast"
@@ -34,7 +34,7 @@
     "name": "Next.js",
     "category": "Frontend",
     "description": "A React framework for building full-stack web applications with powerful rendering features.",
-    "icon": "/public/images/Next.js.png",
+    "icon": "/images/Next.js.png",
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "SSR / Edge"
@@ -44,7 +44,7 @@
     "name": "Node.js",
     "category": "Backend",
     "description": "An asynchronous JavaScript runtime designed for building scalable server-side applications.",
-    "icon": "/public/images/Node.js.png",
+    "icon": "/images/Node.js.png",
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Standard"
@@ -54,7 +54,7 @@
     "name": "PostgreSQL",
     "category": "Database",
     "description": "A powerful open-source relational database system known for reliability and advanced features.",
-    "icon": "/public/images/PostgresSQL.png",
+    "icon": "/images/PostgresSQL.png",
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Top SQL"
@@ -64,7 +64,7 @@
     "name": "Redis",
     "category": "Database",
     "description": "An in-memory data store commonly used for caching, sessions, queues, and fast data access.",
-    "icon": "/public/images/Redis.png",
+    "icon": "/images/Redis.png",
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Cache"
@@ -74,7 +74,7 @@
     "name": "JavaScript",
     "category": "Language",
     "description": "A versatile programming language used to create interactive and dynamic web applications.",
-    "icon": "/public/images/JavaScript.png",
+    "icon": "/images/JavaScript.png",
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Ubiquitous"
@@ -84,7 +84,7 @@
     "name": "TypeScript",
     "category": "Language",
     "description": "A strongly typed programming language that builds on JavaScript for reliable application development.",
-    "icon": "/public/images/TypeScript.png",
+    "icon": "/images/TypeScript.png",
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Essential"
@@ -94,7 +94,7 @@
     "name": "Java",
     "category": "Language",
     "description": "A general-purpose object-oriented programming language designed for portability and large-scale applications.",
-    "icon": "/public/images/Java.png",
+    "icon": "/images/Java.png",
     "rating": 4.6,
     "difficulty": "Intermediate",
     "badge": "Robust"
@@ -104,7 +104,7 @@
     "name": "Tailwind CSS",
     "category": "Styling",
     "description": "A utility-first CSS framework for rapidly building custom and responsive user interfaces.",
-    "icon": "/public/images/Tailwind CSS.png",
+    "icon": "/images/Tailwind CSS.png",
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Modern"
@@ -114,7 +114,7 @@
     "name": "Docker",
     "category": "DevOps",
     "description": "A platform for building, sharing, and running applications in lightweight containers.",
-    "icon": "/public/images/Docker.png",
+    "icon": "/images/Docker.png",
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Containers"

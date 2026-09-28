@@ -75,7 +75,7 @@ Technology cards use:
 
 ## 1. What is JSX, and why is it used in React?
 
-JSX is a syntax extension that lets you write HTML-like markup directly inside JavaScript. Under the hood, a tool like Babel compiles it into React.createElement() calls — so <h1>Hello</h1> becomes React.createElement('h1', null, 'Hello'). It's used because writing UI structure as markup is far more readable than nesting createElement calls by hand, and it lets you embed JavaScript expressions right inside the markup using {}.
+JSX is a syntax extension that lets you write HTML-like markup directly inside JavaScript. Under the hood, a tool like Babel compiles it into React.createElement() calls — so <h1>Hello</h1> becomes React.createElement('h1', null, 'Hello'). It's used because writing UI structure as markup is far more readable than nesting createElement calls by hand, and it lets you embed JavaScript expressions right inside the markup using {}. JSX makes React code easier to read and helps us describe the structure of the user interface.
 
 ## 2. What is the difference between props and state?
 

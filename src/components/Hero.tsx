@@ -45,7 +45,7 @@ function Hero() {
         {/* Hero Image */}
         <div className="flex justify-center lg:justify-end">
           <img
-            src="/public/images/banner-stack.png"
+            src="/images/banner-stack.png"
             alt="Development stack illustration"
             className="w-full max-w-[430px] object-contain"
           />
